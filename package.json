@@ -1,0 +1,73 @@
+{
+  "name": "jazzy-ui",
+  "author": {
+    "name": "megabass00",
+    "email": "megabass00@hotmail.com",
+    "url": "https://github.com/megabass00"
+  },
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "^16.15.0",
+    "yarn": "^1.22.0"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "13.4.0",
+    "@testing-library/user-event": "13.5.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.0.3",
+    "@commitlint/config-conventional": "17.0.3",
+    "@emotion/babel-plugin": "11.9.2",
+    "@emotion/eslint-plugin": "11.7.0",
+    "@types/node": "16.11.43",
+    "@types/qs": "6.9.7",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
+    "@typescript-eslint/eslint-plugin": "5.30.6",
+    "@typescript-eslint/parser": "5.30.6",
+    "eslint": "8.20.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-config-react-app": "7.0.1",
+    "eslint-import-resolver-typescript": "3.3.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "8.0.1",
+    "lint-staged": "13.0.3",
+    "prettier": "2.7.1",
+    "react-scripts": "5.0.1",
+    "typescript": "4.7.4"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "lint:fix": "yarn lint --fix",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
