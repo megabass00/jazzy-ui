@@ -21,8 +21,8 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.0.3",
-    "@commitlint/config-conventional": "17.0.3",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
     "@emotion/babel-plugin": "11.9.2",
     "@emotion/eslint-plugin": "11.7.0",
     "@types/node": "16.11.43",
@@ -48,7 +48,8 @@
     "lint": "eslint . --ext .js,.ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -66,6 +67,16 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   }
 }
