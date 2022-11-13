@@ -1,6 +1,8 @@
 import { lighten, darken } from './colorTools';
 import { Theme, ThemeColor } from './types';
-import { spacing, shadow } from './utils';
+import { spacing, shadow, createTransition } from './utils';
+
+export const ANIMATION_DURATION = '0.2s';
 
 export const BREAKPOINTS = {
     extraSmall: 320,
@@ -8,15 +10,6 @@ export const BREAKPOINTS = {
     tablet: 768,
     laptop: 992,
     desktop: 1200,
-};
-
-export const ZINDEX = {
-    base: 100,
-    carousel: 200,
-    popUp: 300,
-    navBar: 400,
-    popper: 500,
-    spinner: 600,
 };
 
 const COLOR_OFFSETTING = 0.3;
@@ -88,6 +81,10 @@ const theme: Theme = {
             regular: '/assets/fonts/Rubik-Regular.ttf',
             semibold: '/assets/fonts/Rubik-SemiBold.ttf',
         },
+    },
+    transition: {
+        duration: ANIMATION_DURATION,
+        create: createTransition,
     },
     spacing,
     shadow,

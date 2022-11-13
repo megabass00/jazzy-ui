@@ -1,56 +1,47 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 
-import Grid, { GridItem } from '../Grid';
+import { JazzyColor } from '../../../../typings';
+import {
+    colorThemeOptions,
+    directionOptions,
+    enumControl,
+    numberControl,
+} from '../../../../utils';
+import Grid from '../Grid';
+import GridItem from '../GridItem';
 
 export default {
-    title: 'Example/Grid',
+    title: 'Layout/Grid/Grid',
     component: Grid,
     parameters: {
         // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'fullscreen',
     },
+    argTypes: {
+        ...numberControl('columns', 'range', { min: 0, max: 25, step: 1 }),
+        ...enumControl('direction', 'inline-radio', directionOptions),
+    },
 } as ComponentMeta<typeof Grid>;
 
-const TEST_COLORS = ['primary', 'success', 'info', 'warning', 'error'];
+const TEST_COLORS: JazzyColor[] = [...colorThemeOptions];
 
-export const TemplateColumns: ComponentStory<typeof Grid> = (args) => (
+export const Example: ComponentStory<typeof Grid> = (args) => (
     <Grid {...args}>
         {[...TEST_COLORS, ...TEST_COLORS, ...TEST_COLORS].map(
             (color, index) => (
-                <GridItem key={index} bg={color} p={2}>
+                <GridItem key={index} bg={color} p={2} color="#FFFFFF">
                     {color}
                 </GridItem>
             )
         )}
     </Grid>
 );
-TemplateColumns.args = {
-    columns: 5,
+Example.args = {
+    columns: 6,
     spacing: 1,
     rowSpacing: 2,
     columnSpacing: 2,
     direction: 'row',
     autoColumns: false,
-};
-
-const Template: ComponentStory<typeof Grid> = (args) => <Grid {...args} />;
-export const ColumnSpan = Template.bind({});
-ColumnSpan.args = {
-    columns: 5,
-};
-
-export const GridItemExample: ComponentStory<typeof GridItem> = (args) => (
-    <Grid columns={1}>
-        <GridItem {...args}>Test Content</GridItem>
-    </Grid>
-);
-GridItemExample.args = {
-    colSpan: 1,
-    rowSpan: 1,
-    xAlign: 'center',
-    yAlign: 'center',
-    bg: 'primary',
-    color: '#ffffff',
-    p: 1,
 };

@@ -1,4 +1,4 @@
-export const spacePros = [
+export const spaceProps = [
     'm',
     'mt',
     'mr',
@@ -15,5 +15,5 @@ export const spacePros = [
     'py',
 ] as const;
 
-export type SpaceValue = typeof spacePros[number];
+export type SpaceValue = typeof spaceProps[number];
 export type SpaceProps = Partial<Record<SpaceValue, number>>;

@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react';
+
 export interface ThemeColor {
     extralight: string;
     light: string;
@@ -61,6 +63,15 @@ export interface ThemeTypography {
     fonts: ThemeTypographyFonts;
 }
 
+export type ThemeTransitionCreateFn = (
+    props: string | string[],
+    timingFunction: CSSProperties['transitionTimingFunction']
+) => string;
+export interface ThemeTransition {
+    duration: string;
+    create: ThemeTransitionCreateFn;
+}
+
 export type ThemeSpacingFn = (spaceV: number, spaceH?: number) => string;
 export type ThemeShadowFn = (color?: string, elevation?: number) => string;
 
@@ -68,6 +79,7 @@ export interface Theme {
     palette: ThemePalette;
     mediaquery: ThemeMediaQuery;
     typography: ThemeTypography;
+    transition: ThemeTransition;
     spacing: ThemeSpacingFn;
     shadow: ThemeShadowFn;
 }
